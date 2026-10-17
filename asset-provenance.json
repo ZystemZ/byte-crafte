@@ -1,0 +1,1080 @@
+{
+  "assets": {
+    "assets/models/player/model.glb": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:4c142d03cb1b68be93974d4072cfa1ba1c6bc044320a2d1b1362bdb4d951afbb",
+      "shipped": true,
+      "size": 24592,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/models/player/model_0.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:7dd87dca3e730d539f80fc69c7efc4a10c09e255511f8a55661d014b2be31582",
+      "shipped": true,
+      "size": 2340,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/models/players/boy_shaded.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [
+        "scripts/game/bytecrafter_avatar.gd"
+      ],
+      "regions": [],
+      "sha256": "sha256:5f0ff89d914b58251f7d393a7456834c43b7c240c6022342f13e8f69034a7cbb",
+      "shipped": true,
+      "size": 2929204,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "scripts/game/bytecrafter_avatar.gd"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/models/players/girl_shaded.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [
+        "scripts/game/bytecrafter_avatar.gd"
+      ],
+      "regions": [],
+      "sha256": "sha256:9510a1738bf01e976fd449b2b2688b619724df1385e7ea9b57bb6ae848f61533",
+      "shipped": true,
+      "size": 3003521,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "scripts/game/bytecrafter_avatar.gd"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/models/players/rigged_player_boy.fbx": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [
+        "scripts/game/bytecrafter_avatar.gd"
+      ],
+      "regions": [],
+      "sha256": "sha256:e447b2eca205e13f0b1c8828bd8958bb4231f7ae7bf088730f5957353f1e61e6",
+      "shipped": true,
+      "size": 4406816,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "scripts/game/bytecrafter_avatar.gd"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/models/players/rigged_player_boy_0.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:d4b07528768f06b527bcaf21fa7e06051e04afa5df9b8029875625346da9bf88",
+      "shipped": true,
+      "size": 2347400,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/models/players/rigged_player_girl.fbx": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [
+        "scripts/game/bytecrafter_avatar.gd"
+      ],
+      "regions": [],
+      "sha256": "sha256:8494c46ccbc1d6a893c0a21f1c01c31426719028a209442a66b6e421e5ad8055",
+      "shipped": true,
+      "size": 4588256,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "scripts/game/bytecrafter_avatar.gd"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/models/players/rigged_player_girl_0.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:ac4a8e343b2a571fed9bcd10ccfb3717013d23835ca1d7fd632edba263963e3c",
+      "shipped": true,
+      "size": 2420190,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/share/favicon.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [
+        "game-sharing.json",
+        "project.godot",
+        "scripts/game/bytecrafter.gd"
+      ],
+      "regions": [],
+      "sha256": "sha256:b409455b7ac85a89d0c85bf84fbc065ed65c31ddea4ccfcfc1367baacf823933",
+      "shipped": true,
+      "size": 1383,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "game-sharing.json",
+        "project.godot",
+        "scripts/game/bytecrafter.gd"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/template/characters/runner.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:c88485773d6ff9361e036f37d8ac76fb77b8c3f7c041c3f52c8dd222adc8cc21",
+      "shipped": true,
+      "size": 68885,
+      "source": {
+        "starterId": "game-generic-v56"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/characters/sentinel.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:0d9fb751bca5507ba14f7090573e6605a94753390a9e7c53bf2f590f0a24918d",
+      "shipped": true,
+      "size": 64998,
+      "source": {
+        "starterId": "game-generic-v56"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/environment/backdrop.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:ec4ab7867e60fb483dd438459f587b478aac4c1e71ec4fe509ce74a18de34216",
+      "shipped": true,
+      "size": 971282,
+      "source": {
+        "starterId": "game-generic-v56"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/environment/foreground.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:4b6916024c69961fbfa7cdc929c68f547fea4561e61ebdb3405b3aba0efbd94d",
+      "shipped": true,
+      "size": 58603,
+      "source": {
+        "starterId": "game-generic-v56"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/fonts/Figtree-VF.subset.woff2": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [
+        "assets/template/fonts/ui_bold.tres",
+        "assets/template/fonts/ui_medium.tres",
+        "assets/template/fonts/ui_regular.tres"
+      ],
+      "regions": [],
+      "sha256": "sha256:b3976c5969c8b1afd81dc3e314b61d8ffe3f3f58cf40906443105d330e6e0bdf",
+      "shipped": true,
+      "size": 23660,
+      "source": {
+        "starterId": "game-generic-v56"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "assets/template/fonts/ui_bold.tres",
+        "assets/template/fonts/ui_medium.tres",
+        "assets/template/fonts/ui_regular.tres"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/template/fonts/NotoSansSC-VF.subset.woff2": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {
+        "id": "OFL-1.1",
+        "url": "https://openfontlicense.org/open-font-license-official-text/"
+      },
+      "origin": "template",
+      "referenceEvidence": [
+        "assets/template/fonts/noto_sans_sc_bold.tres",
+        "assets/template/fonts/noto_sans_sc_medium.tres",
+        "assets/template/fonts/noto_sans_sc_regular.tres"
+      ],
+      "regions": [],
+      "sha256": "sha256:38f4c5f927f746b3dfa4c3a5d7edf0b7a3e828e27438418fa54f9e1565289412",
+      "shipped": true,
+      "size": 1869368,
+      "source": {
+        "name": "NotoSansSC-VF.subset.woff2",
+        "starterId": "game-generic-v56"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "assets/template/fonts/noto_sans_sc_bold.tres",
+        "assets/template/fonts/noto_sans_sc_medium.tres",
+        "assets/template/fonts/noto_sans_sc_regular.tres"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/template/fonts/display/Sora-VF.subset.woff2": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [
+        "assets/template/fonts/display/generic_eyebrow.tres",
+        "assets/template/fonts/display/generic_heading.tres",
+        "assets/template/fonts/display/generic_menu.tres",
+        "assets/template/fonts/display/generic_title.tres"
+      ],
+      "regions": [],
+      "sha256": "sha256:438fbf4582548e76b266a738f2c11bcbd5137978f2d2e2f3aaabd49df69186f2",
+      "shipped": true,
+      "size": 41696,
+      "source": {
+        "starterId": "game-generic-v56"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "assets/template/fonts/display/generic_eyebrow.tres",
+        "assets/template/fonts/display/generic_heading.tres",
+        "assets/template/fonts/display/generic_menu.tres",
+        "assets/template/fonts/display/generic_title.tres"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/template/powerups/energy.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:ffd7906f240f928e785d7c19a9e7a7b5dfab0d7483be5205dda3e4ba17ebe06a",
+      "shipped": true,
+      "size": 50950,
+      "source": {
+        "starterId": "game-generic-v56"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/powerups/magnet.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:6e7354aa6510a462717218b09b9d784bb161b87878bff62ef4f2a9d03c053de7",
+      "shipped": true,
+      "size": 53724,
+      "source": {
+        "starterId": "game-generic-v56"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/powerups/overdrive.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:6a48a85886c0551c1af0df576b0225f0ec3ae86b326fd84fc614083fbfe2908b",
+      "shipped": true,
+      "size": 37238,
+      "source": {
+        "starterId": "game-generic-v56"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/powerups/shield.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:8cebf0cf730ca35c8c8697192ef78121c926442328a0725e0bd3e31701d64f13",
+      "shipped": true,
+      "size": 39659,
+      "source": {
+        "starterId": "game-generic-v56"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/powerups/slow_field.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:96874c000866b2e7503b40da73888afb918ae36e462f51488415157da52a8637",
+      "shipped": true,
+      "size": 49145,
+      "source": {
+        "starterId": "game-generic-v56"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/ui/loading-background.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:16dde3061f4e60802f8f0d1a6b875e72b6add05192237b03fef1fd313968a13a",
+      "shipped": true,
+      "size": 473356,
+      "source": {
+        "starterId": "game-generic-v56"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/ui/pause_glass.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:c88a4725838df85e72c7270865848f275b62c525c5679a2a8b7ecefb1af82d4b",
+      "shipped": true,
+      "size": 115691,
+      "source": {
+        "starterId": "game-generic-v56"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/ui/title_glass.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:8860db07768f093d4effea10b51431f76a1552d4bc7fd4e57757f189c51f0429",
+      "shipped": true,
+      "size": 155592,
+      "source": {
+        "starterId": "game-generic-v56"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/textures/blocks/cobblestone.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:f34317ebdca77c134b5b52dfb73a13f37e5a65432a65115d205b37cf412aee47",
+      "shipped": true,
+      "size": 384,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/textures/blocks/dirt.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [
+        "scripts/game/bytecrafter_drop.gd"
+      ],
+      "regions": [],
+      "sha256": "sha256:0f4d8f70702e410157e670e0e5f63bc06aa624a1c312e8a0c8ff69eaa5499292",
+      "shipped": true,
+      "size": 381,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "scripts/game/bytecrafter_drop.gd"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/textures/blocks/grass_side.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [
+        "scripts/game/bytecrafter_drop.gd"
+      ],
+      "regions": [],
+      "sha256": "sha256:2521480d1a0d3116e6f922b19186ae536b0ee36d53914fadaf753f2dd96847b9",
+      "shipped": true,
+      "size": 429,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "scripts/game/bytecrafter_drop.gd"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/textures/blocks/grass_top.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:dce0f22011225ddd2b0b86f223c5699c020c681379b9e0ecc2be948a5e5dba79",
+      "shipped": true,
+      "size": 348,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/textures/blocks/oak_leaves_minecraft.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [
+        "scripts/game/bytecrafter_drop.gd"
+      ],
+      "regions": [],
+      "sha256": "sha256:5bcfb0c582d85a44322f395c76c7ddf18cc9b63df37ea17df314952ef5b3f4f5",
+      "shipped": true,
+      "size": 318,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "scripts/game/bytecrafter_drop.gd"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/textures/blocks/oak_log_side.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [
+        "scripts/game/bytecrafter_drop.gd"
+      ],
+      "regions": [],
+      "sha256": "sha256:e0aad292a8401a2c3f070539953c2bcce8c67b7d01dff943fbceec387aa5fb09",
+      "shipped": true,
+      "size": 348,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "scripts/game/bytecrafter_drop.gd"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/textures/blocks/oak_log_top.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:9ea6feba4df44c58f330761bb0758ab0a78d28389e8df9f9a3c9e3c6a59ceebb",
+      "shipped": true,
+      "size": 333,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/textures/blocks/oak_planks.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [
+        "scripts/game/bytecrafter_drop.gd"
+      ],
+      "regions": [],
+      "sha256": "sha256:e9b844c6b73927f383ca1e49d2e2a6de2a21f97e5b59162f96050bf4bac768f1",
+      "shipped": true,
+      "size": 282,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "scripts/game/bytecrafter_drop.gd"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/textures/blocks/sand.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [
+        "scripts/game/bytecrafter_drop.gd"
+      ],
+      "regions": [],
+      "sha256": "sha256:4b147928ece3c860e1247b0263e6647452a0382fed3740afcfc6ef3ef90e6661",
+      "shipped": true,
+      "size": 1674,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "scripts/game/bytecrafter_drop.gd"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/textures/blocks/stone_minecraft.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [
+        "scripts/game/bytecrafter_drop.gd"
+      ],
+      "regions": [],
+      "sha256": "sha256:69a93e2d99b3d82e161df35845f08920d6ba2684ddbcb1f8dd575612cefc3fb1",
+      "shipped": true,
+      "size": 482,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "scripts/game/bytecrafter_drop.gd"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/textures/clouds.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [
+        "scripts/game/bytecrafter.gd"
+      ],
+      "regions": [],
+      "sha256": "sha256:18b72300292efa39f15f0f0e9b77f339b9c9237d054cf8141681ad25f047374f",
+      "shipped": true,
+      "size": 4757,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "scripts/game/bytecrafter.gd"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/textures/enemies/slime.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [
+        "scripts/game/bytecrafter_enemy.gd"
+      ],
+      "regions": [],
+      "sha256": "sha256:456578c6da103c18ac3ffd6bba475b8154a4d82910e0ad34ca699304883f87b0",
+      "shipped": true,
+      "size": 1895,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "scripts/game/bytecrafter_enemy.gd"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/textures/voxel_atlas.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [
+        "scripts/game/voxel_world.gd"
+      ],
+      "regions": [],
+      "sha256": "sha256:794d5415d1627a84673ebbdb0278de49114546ef67d233c65e88a74de1575761",
+      "shipped": true,
+      "size": 3829,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "scripts/game/voxel_world.gd"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/ui/loading_initial.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [
+        "scripts/game/bytecrafter.gd"
+      ],
+      "regions": [],
+      "sha256": "sha256:84009f472c5222482dfda1652c0cfa99cdd1e77f4c3ca7118f258acf4ec030ce",
+      "shipped": true,
+      "size": 352771,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "scripts/game/bytecrafter.gd"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/ui/menu_background.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [
+        "scripts/game/bytecrafter.gd"
+      ],
+      "regions": [],
+      "sha256": "sha256:cc905027b3d285609885dc564c3c7eb00d576024025c701eb1d894738da546ef",
+      "shipped": true,
+      "size": 1971864,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "scripts/game/bytecrafter.gd"
+      ],
+      "used": true,
+      "usedBy": []
+    }
+  },
+  "discoveries": {},
+  "downloads": {},
+  "export": {
+    "coverage": "verified",
+    "hostMedia": [
+      {
+        "contentMatches": [],
+        "path": "index.apple-touch-icon.png",
+        "sha256": "sha256:a98841f4f0ed9fe271eaa82f06cf99e90cb7fa77beb6744112992eb50673b364",
+        "size": 12433,
+        "sourcePaths": []
+      },
+      {
+        "contentMatches": [],
+        "path": "index.icon.png",
+        "sha256": "sha256:ffffbca8db49472c4939c6b6facbb97db281152e504f2afcc81917fdea52c562",
+        "size": 1527,
+        "sourcePaths": []
+      },
+      {
+        "contentMatches": [],
+        "path": "index.png",
+        "sha256": "sha256:3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e",
+        "size": 21443,
+        "sourcePaths": []
+      },
+      {
+        "contentMatches": [],
+        "path": "share/b409455b7ac85a89d0c85bf84fbc065ed65c31ddea4ccfcfc1367baacf823933.png",
+        "sha256": "sha256:b409455b7ac85a89d0c85bf84fbc065ed65c31ddea4ccfcfc1367baacf823933",
+        "size": 1383,
+        "sourcePaths": [
+          "assets/share/favicon.png"
+        ]
+      }
+    ],
+    "pckSha256": "sha256:a3529d8244a8814aa674a71b7cbe3d007f642ef8127d552b045af7e99e8db940",
+    "profile": "release",
+    "sourceFingerprint": "sha256:d32ae9c1fd91f2da29e829293cc26b90677194433e6854983e378dbd4f2dce81"
+  },
+  "procedures": {},
+  "summary": {
+    "ancestry": {
+      "ai": {
+        "retained": 0,
+        "shipped": 0,
+        "used": 0
+      },
+      "catalog": {
+        "retained": 0,
+        "shipped": 0,
+        "used": 0
+      },
+      "procedural": {
+        "retained": 0,
+        "shipped": 0,
+        "used": 0
+      }
+    },
+    "derivatives": {
+      "retained": 0,
+      "shipped": 0,
+      "used": 0
+    },
+    "exportedHostMedia": {
+      "paths": 4,
+      "uniqueHashes": 4,
+      "unmatchedSourcePaths": 3
+    },
+    "files": {
+      "downloaded": 0,
+      "retained": 39,
+      "shipped": 39,
+      "used": 20
+    },
+    "origins": {
+      "ai": {
+        "retained": 0,
+        "shipped": 0,
+        "used": 0
+      },
+      "catalog": {
+        "retained": 0,
+        "shipped": 0,
+        "used": 0
+      },
+      "derivative": {
+        "retained": 0,
+        "shipped": 0,
+        "used": 0
+      },
+      "external": {
+        "retained": 0,
+        "shipped": 0,
+        "used": 0
+      },
+      "procedural": {
+        "retained": 0,
+        "shipped": 0,
+        "used": 0
+      },
+      "template": {
+        "retained": 15,
+        "shipped": 15,
+        "used": 3
+      },
+      "unknown": {
+        "retained": 24,
+        "shipped": 24,
+        "used": 17
+      }
+    },
+    "packs": {
+      "discovered": 0,
+      "downloaded": 0,
+      "shipped": 0,
+      "used": 0
+    },
+    "proceduralSystems": {
+      "retained": 0,
+      "used": 0
+    },
+    "spriteRegions": {
+      "retained": 0,
+      "shipped": 0,
+      "used": 0
+    },
+    "visualCoverage": {
+      "approvedRevision": 3,
+      "blueprintId": "gbp_831b8fbd5ac708dda3c3a74b",
+      "committedRoles": 6,
+      "expectedDigest": "9d57c274287b2effe1cd01249f6069893f2946cba7add1a8430d9bbbed15ed91",
+      "fulfilledRoles": 0,
+      "roles": [
+        {
+          "id": "blocos-terreno",
+          "reasons": [
+            "unresolved"
+          ],
+          "status": "unresolved"
+        },
+        {
+          "id": "personagem-jogador",
+          "reasons": [
+            "unresolved"
+          ],
+          "status": "unresolved"
+        },
+        {
+          "id": "ferramentas-equipamentos",
+          "reasons": [
+            "unresolved"
+          ],
+          "status": "unresolved"
+        },
+        {
+          "id": "recursos-coletaveis",
+          "reasons": [
+            "unresolved"
+          ],
+          "status": "unresolved"
+        },
+        {
+          "id": "criaturas",
+          "reasons": [
+            "unresolved"
+          ],
+          "status": "unresolved"
+        },
+        {
+          "id": "indicadores-interacao-mundo",
+          "reasons": [
+            "unresolved"
+          ],
+          "status": "unresolved"
+        }
+      ],
+      "search": {
+        "checkedPages": 0,
+        "outcomes": 0,
+        "overflowEvents": 0,
+        "requests": 0
+      },
+      "selectedButUnusedAssets": [],
+      "staleRenderedEvidence": [],
+      "status": "incomplete",
+      "unexplainedFallbacks": [],
+      "unresolvedRoles": [
+        "blocos-terreno",
+        "personagem-jogador",
+        "ferramentas-equipamentos",
+        "recursos-coletaveis",
+        "criaturas",
+        "indicadores-interacao-mundo"
+      ],
+      "visualQuality": "requires_agent_review"
+    }
+  },
+  "version": 1,
+  "visualCoverage": {
+    "attempts": {},
+    "expected": {
+      "approvedRevision": 3,
+      "blueprintId": "gbp_831b8fbd5ac708dda3c3a74b",
+      "digest": "9d57c274287b2effe1cd01249f6069893f2946cba7add1a8430d9bbbed15ed91",
+      "roles": [
+        {
+          "description": "Cobre os blocos legíveis que você explora, minera, coleta e posiciona, incluindo superfícies básicas para terreno, recursos e áreas subterrâneas.",
+          "id": "blocos-terreno",
+          "label": "Blocos voxel e materiais do terreno"
+        },
+        {
+          "description": "Representa você quando a câmera alterna para terceira pessoa, com leitura clara de movimento, ações de mineração, colocação de blocos e uso de ferramentas.",
+          "id": "personagem-jogador",
+          "label": "Personagem do jogador em terceira pessoa"
+        },
+        {
+          "description": "Cobre os objetos 3D que você segura, fabrica e equipa no ciclo de mineração, coleta, construção, sobrevivência e progressão.",
+          "id": "ferramentas-equipamentos",
+          "label": "Ferramentas e equipamentos"
+        },
+        {
+          "description": "Dá representação visual aos recursos extraídos e objetos soltos que você coleta antes de armazenar ou usar em receitas.",
+          "id": "recursos-coletaveis",
+          "label": "Recursos e itens coletáveis"
+        },
+        {
+          "description": "Cobre criaturas encontradas ou enfrentadas por você em biomas, cavernas e no ciclo de dia e noite, com silhuetas e estados de ação legíveis.",
+          "id": "criaturas",
+          "label": "Criaturas do mundo"
+        },
+        {
+          "description": "Mostra no próprio mundo qual bloco você mira, o progresso de quebra e a prévia de posicionamento, mantendo claras as ações centrais nas duas câmeras.",
+          "id": "indicadores-interacao-mundo",
+          "label": "Indicadores 3D de interação com blocos"
+        }
+      ]
+    },
+    "overflowEvents": 0,
+    "resolutions": {},
+    "version": 1
+  }
+}

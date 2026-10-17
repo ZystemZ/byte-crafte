@@ -1,0 +1,13 @@
+BYTECRAFTER — ATUALIZAÇÃO DO INVENTÁRIO E CRAFT
+Compatível com a configuração do projeto para Godot 4.7.
+
+Abra project.godot no Godot 4.7 e aguarde a importação terminar.
+Pressione F5 para iniciar. Dentro do mundo, pressione E para abrir o inventário.
+
+A interface agora apresenta itens em grade com texturas do projeto, quantidades,
+uma área visual de mesa de craft 3x3 e botões para as receitas que o jogo já suporta.
+Clicar em um bloco da grade seleciona o slot correspondente da hotbar.
+
+Leia docs/INVENTARIO_CRAFT_2026-10-16.md para detalhes e testes.
+Observação: não foi possível executar o editor Godot neste ambiente; teste o projeto
+no Godot 4.7 antes de distribuir.

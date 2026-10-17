@@ -1,0 +1,13 @@
+BYTECRAFTER — PACOTE COM REIMPORTAÇÃO LIMPA
+
+Este pacote remove os arquivos auxiliares *.import antigos para que o Godot recrie os metadados de importação no computador de destino. Os arquivos-fonte e os assets originais foram mantidos.
+
+IMPORTANTE: o project.godot declara Godot 4.7 (config/features). Abra com Godot 4.7 ou superior. Se estiver usando uma versão anterior, não altere apenas o número da versão para contornar o aviso: scripts e recursos podem usar APIs de versões mais recentes.
+
+PRIMEIRA ABERTURA
+1. Extraia todo o ZIP para uma pasta local simples, por exemplo C:\Projetos\ByteCrafter. Não execute dentro do ZIP.
+2. Abra o arquivo project.godot no Godot 4.7+.
+3. Aguarde a importação inicial terminar.
+4. Se algum arquivo falhar, abra o painel Output/Import e copie as primeiras mensagens de erro completas. A contagem isolada de arquivos não identifica a causa.
+
+Não foi possível executar o editor Godot neste ambiente, portanto este pacote é uma tentativa de regeneração dos metadados de importação, não uma confirmação de que todos os erros foram corrigidos.

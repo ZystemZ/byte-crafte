@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#18231d">
+  <meta name="manus-game-loading-screen" content="1">
+  <title>ByteCrafter</title>
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAFLklEQVR4nO2dvU4cSRSFj1cON7DWkoORsEgISJEDsg0I/AqWyPcdLGLkd3CO5Fdw4MCZg5VTBySWLU1giRWB89kAHWiKoae76/feOl+EEPRUc76qe6e6ewCEEEIIIYQQQgghhBBCCCEcs390uKk9hpo8rT2AWjD4f979jfdvsQGA71+/Pak7qvJ0d8LD4EPev/0MoC8RujnRseBDehLB/QnOCT6kBxHcnlhM8CGeRXB3QimDD/EogpsTyRl8iCcRzJ9AyeBDPIhgduA1gw+xLIK5AY8Fv/fiL/z89V/xMRGLIpgZ6K7gQyTCNJof4NzgQyTCOM0ObFeNnxI+qSkBcCNCqxI0Oaj9o8NNiuBDtBo8pKnBxC73U5EIdzQxiFLBh0iEygLMeS/vZQUIqS1ClReN2cSx2gPsopYIRV8s5e6dpXcBcygtQpEXybVt2/o+QAylRMh68FL79a3tBKYktwhZDlrrQk3tawE5ySVC0oO1dIXOK6lFSHIQBX/H1foaz1fPsr9OKhGiflnB33G1vn7wPQsizP6l4ZM0Cv6GbeEPKSkCME+GP7KMphOu1tc7w+fPtUrUCkB6WwliAk29GgxnPsm+ApycHuwchEemzvjcxyDh3/3V673Zx1j8cCgl+HRxeW8wXleD1Ms4j7dkRUgRPIl+Ovjk9OBWAsCfCLnqd4rggbjwgUSPh4erAeBHBAaVUoS54ecIniT9fACJMO0YU8kZPMnyNvDk9MBto/h89WzR8h0b/qvXe8nDBzJ/QojnRnHqipAi+JwU+YgYz43imAhzwi+x3G+j2GcEee4PgPsiWAieRO0EhnV+DkMRiAcRppI6+H8//rz9es5O4CIBzo5XAIDzL2sAaUXoQYKUdZ7Bv3n5JwDgw4/f5QQgEmEaOYMnVQQgsSJ4LQspl/vHgidVBSDnX9bqD5Cnzj8WPGlCAEBlocRyv41mBCC9iVAreNKcAMR7f1Cyzo/RrADEmwitBE+aF4BYbxRrNHhTMCMAYLc/qF3nxzAlALEiQsvBE5MCkFb7g9bq/BimBSCtiGApeOJCAFKrUWy1wZuCKwGA8v2BhTo/hjsBSG4RrAdP3ApAcvQHIa3X+THmCmDu38bd3oxycblIgm23phErdT4lZp8OPjte4dPF5aQZvY1QnphZbzV8wOAKMGS4GgBx/cFcWljuU2BaAFJSBC/BExcCkJwieAueuBKAxDaKIZZr/C5cCkDOjldRq4HXWT/EtQDAsrLQQ/DEvQBkigg9BU+6EYCEIhDPdX4MsxtBsYTb2T2GD3QsgLhBAnSOBOgcCdA5EqBzJEDnSIDOkQCdIwE6RwJ0jgTonNkXg75//fbkHNgAD/fTRT0+/PgNYP4/j1p0NZAvIhHqszR4EnU5WCLUIzZ4kuR+gKEIkiA/c5/+GSPpDSHqD/KSatYPSX5HkMpCenIET7LdEiYR4skZPMl+T6D6g2WkrPNjFLspVP3BNErM+iFF7wpWWXic0sGTKreFqyzcp9Ryv42qzwX0XhZqzfoh1R8M6bEstBA8qS4A6UGEloInzQhAvPYHNev8GM0JQLz0By3O+iHNCgDYLgutB0+aFoBYEsFK8MSEAKT1/qDVOj+GKQFIa/2BtVk/xKQAQBtlwXLwxKwApIYIHoIn5gUgpfoDi3V+DDcCkFz9gadZP8SdAEDasuA1eOJSABJbFrwt99twLQCZWxa8z/ohXQgATCsLPQVPujnRkP2jw034vZ6CJ90+HRyG3WP4QgghhBBCCCGE6Iv/Ab/pGtwZ8obTAAAAAElFTkSuQmCC">
+  $GODOT_HEAD_INCLUDE
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #18231d; color: #f2f0e6; }
+    #canvas { display: block; width: 100%; height: 100%; outline: none; }
+    #loading { position: fixed; inset: 0; box-sizing: border-box; overflow: hidden; background: #050706; color: #f2f0e6; }
+    #loading[hidden], [hidden] { display: none; }
+    #loading-artwork { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    #loading-content { position: absolute; left: max(16px, env(safe-area-inset-left)); bottom: max(16px, env(safe-area-inset-bottom)); display: grid; gap: 9px; box-sizing: border-box; width: min(360px, calc(100vw - 32px)); padding: 14px 16px; border: 1px solid #a7cb7a70; border-radius: 12px; background: #070b08d9; box-shadow: 0 12px 36px #0009; backdrop-filter: blur(8px); }
+    #loading-icon { display: block; width: 48px; height: 48px; margin: 0 auto; }
+    h1 { margin: 0; color: #f2f0e6; font-size: clamp(18px, 3vw, 24px); letter-spacing: 0.13em; font-weight: 800; }
+    #loading-status { margin: 0; color: #cbd6be; line-height: 1.45; font-size: 14px; }
+    progress { width: 100%; height: 8px; border: 0; border-radius: 99px; overflow: hidden; accent-color: #a7cb7a; background: #ffffff25; }
+    progress::-webkit-progress-bar { border-radius: 99px; background: #ffffff25; }
+    progress::-webkit-progress-value { border-radius: 99px; background: #a7cb7a; }
+    progress::-moz-progress-bar { border-radius: 99px; background: #a7cb7a; }
+    progress:not([value]) { background: linear-gradient(90deg, #ffffff20 0%, #a7cb7a 45%, #ffffff20 90%); background-size: 220% 100%; animation: load-sweep 1.6s linear infinite; }
+    #loading-notice { max-width: 100%; color: #e6d5a5; line-height: 1.5; font-size: 12px; }
+    button { min-height: 44px; padding: 10px 24px; border: 1px solid #b7d295; border-radius: 8px; background: #324832; color: #f7f5ea; cursor: pointer; font: inherit; font-weight: 650; }
+    button:hover { background: #405a3d; }
+    button:focus-visible { outline: 3px solid #dce9c9; outline-offset: 3px; }
+    @keyframes load-sweep { to { background-position: -220% 0; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } }
+    @media (orientation: portrait) { #loading-artwork { object-fit: contain; } }
+    @media (max-height: 460px) { #loading-content { gap: 6px; padding: 8px 12px; } h1 { font-size: 18px; } }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" tabindex="0">Seu navegador não oferece suporte ao canvas necessário para este jogo.</canvas>
+  <section id="loading" role="status" aria-live="polite" aria-label="Carregando ByteCrafter">
+    <img id="loading-artwork" src="/manus-storage/loading_initial_8a3705a5.png" alt="" aria-hidden="true">
+    <div id="loading-content">
+    <img id="loading-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAFLklEQVR4nO2dvU4cSRSFj1cON7DWkoORsEgISJEDsg0I/AqWyPcdLGLkd3CO5Fdw4MCZg5VTBySWLU1giRWB89kAHWiKoae76/feOl+EEPRUc76qe6e6ewCEEEIIIYQQQgghhBBCCCEcs390uKk9hpo8rT2AWjD4f979jfdvsQGA71+/Pak7qvJ0d8LD4EPev/0MoC8RujnRseBDehLB/QnOCT6kBxHcnlhM8CGeRXB3QimDD/EogpsTyRl8iCcRzJ9AyeBDPIhgduA1gw+xLIK5AY8Fv/fiL/z89V/xMRGLIpgZ6K7gQyTCNJof4NzgQyTCOM0ObFeNnxI+qSkBcCNCqxI0Oaj9o8NNiuBDtBo8pKnBxC73U5EIdzQxiFLBh0iEygLMeS/vZQUIqS1ClReN2cSx2gPsopYIRV8s5e6dpXcBcygtQpEXybVt2/o+QAylRMh68FL79a3tBKYktwhZDlrrQk3tawE5ySVC0oO1dIXOK6lFSHIQBX/H1foaz1fPsr9OKhGiflnB33G1vn7wPQsizP6l4ZM0Cv6GbeEPKSkCME+GP7KMphOu1tc7w+fPtUrUCkB6WwliAk29GgxnPsm+ApycHuwchEemzvjcxyDh3/3V673Zx1j8cCgl+HRxeW8wXleD1Ms4j7dkRUgRPIl+Ovjk9OBWAsCfCLnqd4rggbjwgUSPh4erAeBHBAaVUoS54ecIniT9fACJMO0YU8kZPMnyNvDk9MBto/h89WzR8h0b/qvXe8nDBzJ/QojnRnHqipAi+JwU+YgYz43imAhzwi+x3G+j2GcEee4PgPsiWAieRO0EhnV+DkMRiAcRppI6+H8//rz9es5O4CIBzo5XAIDzL2sAaUXoQYKUdZ7Bv3n5JwDgw4/f5QQgEmEaOYMnVQQgsSJ4LQspl/vHgidVBSDnX9bqD5Cnzj8WPGlCAEBlocRyv41mBCC9iVAreNKcAMR7f1Cyzo/RrADEmwitBE+aF4BYbxRrNHhTMCMAYLc/qF3nxzAlALEiQsvBE5MCkFb7g9bq/BimBSCtiGApeOJCAFKrUWy1wZuCKwGA8v2BhTo/hjsBSG4RrAdP3ApAcvQHIa3X+THmCmDu38bd3oxycblIgm23phErdT4lZp8OPjte4dPF5aQZvY1QnphZbzV8wOAKMGS4GgBx/cFcWljuU2BaAFJSBC/BExcCkJwieAueuBKAxDaKIZZr/C5cCkDOjldRq4HXWT/EtQDAsrLQQ/DEvQBkigg9BU+6EYCEIhDPdX4MsxtBsYTb2T2GD3QsgLhBAnSOBOgcCdA5EqBzJEDnSIDOkQCdIwE6RwJ0jgTonNkXg75//fbkHNgAD/fTRT0+/PgNYP4/j1p0NZAvIhHqszR4EnU5WCLUIzZ4kuR+gKEIkiA/c5/+GSPpDSHqD/KSatYPSX5HkMpCenIET7LdEiYR4skZPMl+T6D6g2WkrPNjFLspVP3BNErM+iFF7wpWWXic0sGTKreFqyzcp9Ryv42qzwX0XhZqzfoh1R8M6bEstBA8qS4A6UGEloInzQhAvPYHNev8GM0JQLz0By3O+iHNCgDYLgutB0+aFoBYEsFK8MSEAKT1/qDVOj+GKQFIa/2BtVk/xKQAQBtlwXLwxKwApIYIHoIn5gUgpfoDi3V+DDcCkFz9gadZP8SdAEDasuA1eOJSABJbFrwt99twLQCZWxa8z/ohXQgATCsLPQVPujnRkP2jw034vZ6CJ90+HRyG3WP4QgghhBBCCCGE6Iv/Ab/pGtwZ8obTAAAAAElFTkSuQmCC" width="88" height="88" alt="">
+    <h1 id="game-title">ByteCrafter</h1>
+    <p id="loading-status">Preparando o mundo…</p>
+    <progress id="loading-progress" aria-label="Progresso do carregamento"></progress>
+    <p id="loading-notice" hidden></p>
+    <button id="loading-retry" type="button" hidden>Tentar novamente</button>
+    <noscript>JavaScript é necessário para executar a prévia Web do jogo.</noscript>
+    </div>
+  </section>
+  <script>
+    (() => {
+      const config = $GODOT_CONFIG;
+      const MIN_LOADING_MS = 3000;
+      const threads = $GODOT_THREADS_ENABLED;
+      const canvas = document.getElementById('canvas');
+      const loading = document.getElementById('loading');
+      const status = document.getElementById('loading-status');
+      const progress = document.getElementById('loading-progress');
+      const notice = document.getElementById('loading-notice');
+      const retry = document.getElementById('loading-retry');
+      retry.addEventListener('click', () => window.location.reload());
+      let failed = false;
+      let ready = false;
+      const startedAt = performance.now();
+      let lastProgressAt = startedAt;
+      let downloadedBytes = 0;
+      let downloadComplete = false;
+      const updateNotice = () => {
+        if (failed || ready || performance.now() - startedAt < 30000) return;
+        notice.hidden = false;
+        retry.hidden = false;
+        const message = performance.now() - lastProgressAt >= 30000
+          ? 'O carregamento não apresentou progresso recente. Você pode aguardar ou tentar novamente.'
+          : 'O jogo ainda está carregando. Você pode aguardar ou tentar novamente.';
+        if (notice.textContent !== message) notice.textContent = message;
+      };
+      const onWindowError = (event) => fail(event.error || new Error('Falha ao iniciar o motor'));
+      const onUnhandledRejection = (event) => fail(event.reason || new Error('Falha ao iniciar o motor'));
+      const startupWatch = setInterval(updateNotice, 1000);
+      const stopObserving = () => {
+        clearInterval(startupWatch);
+        window.removeEventListener('error', onWindowError);
+        window.removeEventListener('unhandledrejection', onUnhandledRejection);
+      };
+      const fail = (error) => {
+        if (failed || ready) return;
+        failed = true;
+        stopObserving();
+        console.error('[ByteCrafter/loading] Falha ao iniciar:', error);
+        loading.hidden = false;
+        status.textContent = 'Não foi possível carregar o jogo. Tente novamente.';
+        progress.hidden = true;
+        notice.hidden = true;
+        retry.hidden = false;
+      };
+      window.addEventListener('error', onWindowError);
+      window.addEventListener('unhandledrejection', onUnhandledRejection);
+      const onProgress = (current, total) => {
+        if (failed || ready) return;
+        if (Number.isFinite(current) && current > downloadedBytes) {
+          downloadedBytes = current;
+          lastProgressAt = performance.now();
+        }
+        if (!downloadComplete && Number.isFinite(total) && total > 0 && Number.isFinite(current) && current >= total) {
+          downloadComplete = true;
+          lastProgressAt = performance.now();
+        }
+        updateNotice();
+        if (!Number.isFinite(total) || total <= 0 || !Number.isFinite(current) || current < 0) {
+          progress.removeAttribute('value');
+          status.textContent = 'Preparando o mundo…';
+          return;
+        }
+        progress.max = total;
+        progress.value = Math.min(current, total);
+        status.textContent = current >= total ? 'Iniciando ByteCrafter…' : `Carregando ${Math.floor(current / total * 100)}%`;
+      };
+      const start = async () => {
+        if (failed) return;
+        try {
+          lastProgressAt = performance.now();
+          const missing = Engine.getMissingFeatures({ threads });
+          if (missing.length) throw new Error(`Recursos Web ausentes: ${missing.join(', ')}`);
+          const engine = new Engine({ ...config, canvas });
+          await engine.startGame({ onProgress });
+          if (failed) return;
+          const remainingMs = Math.max(0, MIN_LOADING_MS - (performance.now() - startedAt));
+          if (remainingMs > 0) {
+            status.textContent = 'Finalizando a entrada no mundo…';
+            await new Promise((resolve) => setTimeout(resolve, remainingMs));
+          }
+          if (failed) return;
+          ready = true;
+          stopObserving();
+          notice.hidden = true;
+          retry.hidden = true;
+          requestAnimationFrame(() => requestAnimationFrame(() => {
+            if (failed) return;
+            loading.hidden = true;
+            if (config['focusCanvas']) canvas.focus();
+          }));
+        } catch (error) {
+          fail(error);
+        }
+      };
+      const script = document.createElement('script');
+      script.src = '$GODOT_URL';
+      script.addEventListener('load', start, { once: true });
+      script.addEventListener('error', () => fail(new Error('Não foi possível carregar o script do Godot')), { once: true });
+      const artwork = document.getElementById('loading-artwork');
+      const artworkReady = artwork && typeof artwork.decode === 'function'
+        ? Promise.race([artwork.decode().catch(() => undefined), new Promise((resolve) => setTimeout(resolve, 1500))])
+        : Promise.resolve();
+      artworkReady.then(() => document.head.appendChild(script));
+    })();
+  </script>
+</body>
+</html>

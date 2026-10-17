@@ -1,0 +1,66 @@
+; ByteCrafter — jogo 3D de exploração, sobrevivência e construção.
+; Desenvolvido em Godot; o export Web é somente uma prévia do protótipo.
+
+config_version=5
+
+[application]
+
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+boot_splash/bg_color=Color(0.08, 0.12, 0.14, 1)
+config/name="ByteCrafter"
+config/description="Jogo voxel 3D de mundo aberto: explore, sobreviva e construa."
+config/version="0.2.0"
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+config/icon="res://assets/share/favicon.png"
+
+[autoload]
+
+TuningBridge="*res://scripts/manus/preview/tuning_adapter.gd"
+ManusFontTheme="*res://autoload/manus_font_theme.gd"
+SaveStore="*res://autoload/save_store.gd"
+I18n="*res://autoload/i18n.gd"
+TuningStore="*res://autoload/tuning_store.gd"
+AudioDirector="*res://autoload/audio_director.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[input]
+
+move_up={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"physical_keycode":87)]
+}
+move_down={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"physical_keycode":83)]
+}
+move_left={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"physical_keycode":65)]
+}
+move_right={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"physical_keycode":68)]
+}
+
+[gui]
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.12, 0.17, 0.18, 1)
+textures/default_filters/use_nearest_mipmap_filter=false
+
+[editor]
+import/use_multiple_threads=false

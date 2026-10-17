@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 2,
+  "title": "ByteCrafter",
+  "description": "Explore um mundo voxel aberto, sobreviva, minere e construa em primeira ou terceira pessoa. Coopere pela rede local na versão nativa do Godot.",
+  "defaultCaptions": {},
+  "assets": {
+    "favicon": "assets/share/favicon.png"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "tile_size_px": 16,
+  "atlas_size_px": [
+    64,
+    48
+  ],
+  "columns": 4,
+  "rows": 3,
+  "tiles": {
+    "grass_top": {
+      "index": 0,
+      "x": 0,
+      "y": 0
+    },
+    "grass_side": {
+      "index": 1,
+      "x": 1,
+      "y": 0
+    },
+    "dirt": {
+      "index": 2,
+      "x": 2,
+      "y": 0
+    },
+    "stone_minecraft": {
+      "index": 3,
+      "x": 3,
+      "y": 0
+    },
+    "oak_log_side": {
+      "index": 4,
+      "x": 0,
+      "y": 1
+    },
+    "oak_log_top": {
+      "index": 5,
+      "x": 1,
+      "y": 1
+    },
+    "oak_leaves_minecraft": {
+      "index": 6,
+      "x": 2,
+      "y": 1
+    },
+    "sand": {
+      "index": 7,
+      "x": 3,
+      "y": 1
+    },
+    "oak_planks": {
+      "index": 8,
+      "x": 0,
+      "y": 2
+    },
+    "cobblestone": {
+      "index": 9,
+      "x": 1,
+      "y": 2
+    }
+  },
+  "block_faces": {
+    "grama": {
+      "top": "grass_top",
+      "side": "grass_side",
+      "bottom": "dirt"
+    },
+    "terra": {
+      "all": "dirt"
+    },
+    "pedra": {
+      "all": "stone_minecraft"
+    },
+    "tronco": {
+      "side": "oak_log_side",
+      "top_bottom": "oak_log_top"
+    },
+    "folhas": {
+      "all": "oak_leaves_minecraft"
+    },
+    "areia": {
+      "all": "sand"
+    },
+    "tabuas": {
+      "all": "oak_planks"
+    }
+  }
+}

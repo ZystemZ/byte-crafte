@@ -1,0 +1,348 @@
+{
+  "version": 2,
+  "groups": {
+    "criaturas": {
+      "name": "Criaturas",
+      "order": 30
+    },
+    "models": {
+      "name": "Models",
+      "order": 60
+    },
+    "mundo-voxel": {
+      "name": "Mundo voxel",
+      "order": 10
+    },
+    "personagem": {
+      "name": "Personagem do jogador",
+      "order": 20
+    },
+    "share": {
+      "name": "Share",
+      "order": 20
+    },
+    "template": {
+      "name": "Template",
+      "order": 0
+    },
+    "ui": {
+      "name": "Ui",
+      "order": 70
+    }
+  },
+  "bundles": {},
+  "assets": {
+    "assets/models/player/model.glb": {
+      "path": "/manus-storage/game/sha256/4c142d03cb1b68be93974d4072cfa1ba1c6bc044320a2d1b1362bdb4d951afbb.glb",
+      "sha256": "sha256:4c142d03cb1b68be93974d4072cfa1ba1c6bc044320a2d1b1362bdb4d951afbb",
+      "size": 24592,
+      "assetType": "model",
+      "groupId": "personagem",
+      "used": false
+    },
+    "assets/models/player/model_0.png": {
+      "path": "/manus-storage/game/sha256/7dd87dca3e730d539f80fc69c7efc4a10c09e255511f8a55661d014b2be31582.png",
+      "sha256": "sha256:7dd87dca3e730d539f80fc69c7efc4a10c09e255511f8a55661d014b2be31582",
+      "size": 2340,
+      "assetType": "image",
+      "groupId": "personagem",
+      "used": false
+    },
+    "assets/models/players/boy_shaded.png": {
+      "path": "/manus-storage/game/sha256/5f0ff89d914b58251f7d393a7456834c43b7c240c6022342f13e8f69034a7cbb.png",
+      "sha256": "sha256:5f0ff89d914b58251f7d393a7456834c43b7c240c6022342f13e8f69034a7cbb",
+      "size": 2929204,
+      "assetType": "image",
+      "groupId": "models",
+      "used": true
+    },
+    "assets/models/players/girl_shaded.png": {
+      "path": "/manus-storage/game/sha256/9510a1738bf01e976fd449b2b2688b619724df1385e7ea9b57bb6ae848f61533.png",
+      "sha256": "sha256:9510a1738bf01e976fd449b2b2688b619724df1385e7ea9b57bb6ae848f61533",
+      "size": 3003521,
+      "assetType": "image",
+      "groupId": "models",
+      "used": true
+    },
+    "assets/models/players/rigged_player_boy.fbx": {
+      "path": "/manus-storage/game/sha256/e447b2eca205e13f0b1c8828bd8958bb4231f7ae7bf088730f5957353f1e61e6.fbx",
+      "sha256": "sha256:e447b2eca205e13f0b1c8828bd8958bb4231f7ae7bf088730f5957353f1e61e6",
+      "size": 4406816,
+      "assetType": "model",
+      "groupId": "models",
+      "used": true
+    },
+    "assets/models/players/rigged_player_boy_0.png": {
+      "path": "/manus-storage/game/sha256/d4b07528768f06b527bcaf21fa7e06051e04afa5df9b8029875625346da9bf88.png",
+      "sha256": "sha256:d4b07528768f06b527bcaf21fa7e06051e04afa5df9b8029875625346da9bf88",
+      "size": 2347400,
+      "assetType": "image",
+      "groupId": "models",
+      "used": false
+    },
+    "assets/models/players/rigged_player_girl.fbx": {
+      "path": "/manus-storage/game/sha256/8494c46ccbc1d6a893c0a21f1c01c31426719028a209442a66b6e421e5ad8055.fbx",
+      "sha256": "sha256:8494c46ccbc1d6a893c0a21f1c01c31426719028a209442a66b6e421e5ad8055",
+      "size": 4588256,
+      "assetType": "model",
+      "groupId": "models",
+      "used": true
+    },
+    "assets/models/players/rigged_player_girl_0.png": {
+      "path": "/manus-storage/game/sha256/ac4a8e343b2a571fed9bcd10ccfb3717013d23835ca1d7fd632edba263963e3c.png",
+      "sha256": "sha256:ac4a8e343b2a571fed9bcd10ccfb3717013d23835ca1d7fd632edba263963e3c",
+      "size": 2420190,
+      "assetType": "image",
+      "groupId": "models",
+      "used": false
+    },
+    "assets/share/favicon.png": {
+      "path": "/manus-storage/game/sha256/b409455b7ac85a89d0c85bf84fbc065ed65c31ddea4ccfcfc1367baacf823933.png",
+      "sha256": "sha256:b409455b7ac85a89d0c85bf84fbc065ed65c31ddea4ccfcfc1367baacf823933",
+      "size": 1383,
+      "assetType": "image",
+      "groupId": "share",
+      "used": true
+    },
+    "assets/template/characters/runner.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/06/game-template/game-generic/2026.09.07-minimalist-v1/c88485773d6ff9361e036f37d8ac76fb77b8c3f7c041c3f52c8dd222adc8cc21/assets/characters/runner.png",
+      "sha256": "sha256:c88485773d6ff9361e036f37d8ac76fb77b8c3f7c041c3f52c8dd222adc8cc21",
+      "size": 68885,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/characters/sentinel.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/06/game-template/game-generic/2026.09.07-minimalist-v1/0d9fb751bca5507ba14f7090573e6605a94753390a9e7c53bf2f590f0a24918d/assets/characters/sentinel.png",
+      "sha256": "sha256:0d9fb751bca5507ba14f7090573e6605a94753390a9e7c53bf2f590f0a24918d",
+      "size": 64998,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/environment/backdrop.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/06/game-template/game-generic/2026.09.07-minimalist-v1/ec4ab7867e60fb483dd438459f587b478aac4c1e71ec4fe509ce74a18de34216/assets/environment/backdrop.png",
+      "sha256": "sha256:ec4ab7867e60fb483dd438459f587b478aac4c1e71ec4fe509ce74a18de34216",
+      "size": 971282,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/environment/foreground.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/06/game-template/game-generic/2026.09.07-minimalist-v1/4b6916024c69961fbfa7cdc929c68f547fea4561e61ebdb3405b3aba0efbd94d/assets/environment/foreground.png",
+      "sha256": "sha256:4b6916024c69961fbfa7cdc929c68f547fea4561e61ebdb3405b3aba0efbd94d",
+      "size": 58603,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/fonts/Figtree-VF.subset.woff2": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/25/game-template/game-generic/2026.09.25-typography-v1/b3976c5969c8b1afd81dc3e314b61d8ffe3f3f58cf40906443105d330e6e0bdf/assets/template/fonts/Figtree-VF.subset.woff2",
+      "sha256": "sha256:b3976c5969c8b1afd81dc3e314b61d8ffe3f3f58cf40906443105d330e6e0bdf",
+      "size": 23660,
+      "assetType": "font",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/fonts/NotoSansSC-VF.subset.woff2": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/25/game-template/game-generic/2026.09.25-typography-v1/38f4c5f927f746b3dfa4c3a5d7edf0b7a3e828e27438418fa54f9e1565289412/assets/template/fonts/NotoSansSC-VF.subset.woff2",
+      "sha256": "sha256:38f4c5f927f746b3dfa4c3a5d7edf0b7a3e828e27438418fa54f9e1565289412",
+      "size": 1869368,
+      "assetType": "font",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/fonts/display/Sora-VF.subset.woff2": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/25/game-template/game-generic/2026.09.25-typography-v1/438fbf4582548e76b266a738f2c11bcbd5137978f2d2e2f3aaabd49df69186f2/assets/template/fonts/display/Sora-VF.subset.woff2",
+      "sha256": "sha256:438fbf4582548e76b266a738f2c11bcbd5137978f2d2e2f3aaabd49df69186f2",
+      "size": 41696,
+      "assetType": "font",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/powerups/energy.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/06/game-template/game-generic/2026.09.07-minimalist-v1/ffd7906f240f928e785d7c19a9e7a7b5dfab0d7483be5205dda3e4ba17ebe06a/assets/powerups/energy.png",
+      "sha256": "sha256:ffd7906f240f928e785d7c19a9e7a7b5dfab0d7483be5205dda3e4ba17ebe06a",
+      "size": 50950,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/powerups/magnet.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/06/game-template/game-generic/2026.09.07-minimalist-v1/6e7354aa6510a462717218b09b9d784bb161b87878bff62ef4f2a9d03c053de7/assets/powerups/magnet.png",
+      "sha256": "sha256:6e7354aa6510a462717218b09b9d784bb161b87878bff62ef4f2a9d03c053de7",
+      "size": 53724,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/powerups/overdrive.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/06/game-template/game-generic/2026.09.07-minimalist-v1/6a48a85886c0551c1af0df576b0225f0ec3ae86b326fd84fc614083fbfe2908b/assets/powerups/overdrive.png",
+      "sha256": "sha256:6a48a85886c0551c1af0df576b0225f0ec3ae86b326fd84fc614083fbfe2908b",
+      "size": 37238,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/powerups/shield.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/06/game-template/game-generic/2026.09.07-minimalist-v1/8cebf0cf730ca35c8c8697192ef78121c926442328a0725e0bd3e31701d64f13/assets/powerups/shield.png",
+      "sha256": "sha256:8cebf0cf730ca35c8c8697192ef78121c926442328a0725e0bd3e31701d64f13",
+      "size": 39659,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/powerups/slow_field.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/06/game-template/game-generic/2026.09.07-minimalist-v1/96874c000866b2e7503b40da73888afb918ae36e462f51488415157da52a8637/assets/powerups/slow_field.png",
+      "sha256": "sha256:96874c000866b2e7503b40da73888afb918ae36e462f51488415157da52a8637",
+      "size": 49145,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/ui/loading-background.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/25/game-template/game-generic/2026.09.25-typography-v1/16dde3061f4e60802f8f0d1a6b875e72b6add05192237b03fef1fd313968a13a/assets/template/ui/loading-background.png",
+      "sha256": "sha256:16dde3061f4e60802f8f0d1a6b875e72b6add05192237b03fef1fd313968a13a",
+      "size": 473356,
+      "assetType": "image",
+      "groupId": "template",
+      "used": false
+    },
+    "assets/template/ui/pause_glass.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/06/game-template/game-generic/2026.09.07-minimalist-v1/c88a4725838df85e72c7270865848f275b62c525c5679a2a8b7ecefb1af82d4b/assets/ui/pause_glass.png",
+      "sha256": "sha256:c88a4725838df85e72c7270865848f275b62c525c5679a2a8b7ecefb1af82d4b",
+      "size": 115691,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/ui/title_glass.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/06/game-template/game-generic/2026.09.07-minimalist-v1/8860db07768f093d4effea10b51431f76a1552d4bc7fd4e57757f189c51f0429/assets/ui/title_glass.png",
+      "sha256": "sha256:8860db07768f093d4effea10b51431f76a1552d4bc7fd4e57757f189c51f0429",
+      "size": 155592,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/textures/blocks/cobblestone.png": {
+      "path": "/manus-storage/game/sha256/f34317ebdca77c134b5b52dfb73a13f37e5a65432a65115d205b37cf412aee47.png",
+      "sha256": "sha256:f34317ebdca77c134b5b52dfb73a13f37e5a65432a65115d205b37cf412aee47",
+      "size": 384,
+      "assetType": "image",
+      "groupId": "mundo-voxel",
+      "used": false
+    },
+    "assets/textures/blocks/dirt.png": {
+      "path": "/manus-storage/game/sha256/0f4d8f70702e410157e670e0e5f63bc06aa624a1c312e8a0c8ff69eaa5499292.png",
+      "sha256": "sha256:0f4d8f70702e410157e670e0e5f63bc06aa624a1c312e8a0c8ff69eaa5499292",
+      "size": 381,
+      "assetType": "image",
+      "groupId": "mundo-voxel",
+      "used": true
+    },
+    "assets/textures/blocks/grass_side.png": {
+      "path": "/manus-storage/game/sha256/2521480d1a0d3116e6f922b19186ae536b0ee36d53914fadaf753f2dd96847b9.png",
+      "sha256": "sha256:2521480d1a0d3116e6f922b19186ae536b0ee36d53914fadaf753f2dd96847b9",
+      "size": 429,
+      "assetType": "image",
+      "groupId": "mundo-voxel",
+      "used": true
+    },
+    "assets/textures/blocks/grass_top.png": {
+      "path": "/manus-storage/game/sha256/dce0f22011225ddd2b0b86f223c5699c020c681379b9e0ecc2be948a5e5dba79.png",
+      "sha256": "sha256:dce0f22011225ddd2b0b86f223c5699c020c681379b9e0ecc2be948a5e5dba79",
+      "size": 348,
+      "assetType": "image",
+      "groupId": "mundo-voxel",
+      "used": false
+    },
+    "assets/textures/blocks/oak_leaves_minecraft.png": {
+      "path": "/manus-storage/game/sha256/5bcfb0c582d85a44322f395c76c7ddf18cc9b63df37ea17df314952ef5b3f4f5.png",
+      "sha256": "sha256:5bcfb0c582d85a44322f395c76c7ddf18cc9b63df37ea17df314952ef5b3f4f5",
+      "size": 318,
+      "assetType": "image",
+      "groupId": "mundo-voxel",
+      "used": true
+    },
+    "assets/textures/blocks/oak_log_side.png": {
+      "path": "/manus-storage/game/sha256/e0aad292a8401a2c3f070539953c2bcce8c67b7d01dff943fbceec387aa5fb09.png",
+      "sha256": "sha256:e0aad292a8401a2c3f070539953c2bcce8c67b7d01dff943fbceec387aa5fb09",
+      "size": 348,
+      "assetType": "image",
+      "groupId": "mundo-voxel",
+      "used": true
+    },
+    "assets/textures/blocks/oak_log_top.png": {
+      "path": "/manus-storage/game/sha256/9ea6feba4df44c58f330761bb0758ab0a78d28389e8df9f9a3c9e3c6a59ceebb.png",
+      "sha256": "sha256:9ea6feba4df44c58f330761bb0758ab0a78d28389e8df9f9a3c9e3c6a59ceebb",
+      "size": 333,
+      "assetType": "image",
+      "groupId": "mundo-voxel",
+      "used": false
+    },
+    "assets/textures/blocks/oak_planks.png": {
+      "path": "/manus-storage/game/sha256/e9b844c6b73927f383ca1e49d2e2a6de2a21f97e5b59162f96050bf4bac768f1.png",
+      "sha256": "sha256:e9b844c6b73927f383ca1e49d2e2a6de2a21f97e5b59162f96050bf4bac768f1",
+      "size": 282,
+      "assetType": "image",
+      "groupId": "mundo-voxel",
+      "used": true
+    },
+    "assets/textures/blocks/sand.png": {
+      "path": "/manus-storage/game/sha256/4b147928ece3c860e1247b0263e6647452a0382fed3740afcfc6ef3ef90e6661.png",
+      "sha256": "sha256:4b147928ece3c860e1247b0263e6647452a0382fed3740afcfc6ef3ef90e6661",
+      "size": 1674,
+      "assetType": "image",
+      "groupId": "mundo-voxel",
+      "used": true
+    },
+    "assets/textures/blocks/stone_minecraft.png": {
+      "path": "/manus-storage/game/sha256/69a93e2d99b3d82e161df35845f08920d6ba2684ddbcb1f8dd575612cefc3fb1.png",
+      "sha256": "sha256:69a93e2d99b3d82e161df35845f08920d6ba2684ddbcb1f8dd575612cefc3fb1",
+      "size": 482,
+      "assetType": "image",
+      "groupId": "mundo-voxel",
+      "used": true
+    },
+    "assets/textures/clouds.png": {
+      "path": "/manus-storage/game/sha256/18b72300292efa39f15f0f0e9b77f339b9c9237d054cf8141681ad25f047374f.png",
+      "sha256": "sha256:18b72300292efa39f15f0f0e9b77f339b9c9237d054cf8141681ad25f047374f",
+      "size": 4757,
+      "assetType": "image",
+      "groupId": "mundo-voxel",
+      "used": true
+    },
+    "assets/textures/enemies/slime.png": {
+      "path": "/manus-storage/game/sha256/456578c6da103c18ac3ffd6bba475b8154a4d82910e0ad34ca699304883f87b0.png",
+      "sha256": "sha256:456578c6da103c18ac3ffd6bba475b8154a4d82910e0ad34ca699304883f87b0",
+      "size": 1895,
+      "assetType": "image",
+      "groupId": "criaturas",
+      "used": true
+    },
+    "assets/textures/voxel_atlas.png": {
+      "path": "/manus-storage/game/sha256/794d5415d1627a84673ebbdb0278de49114546ef67d233c65e88a74de1575761.png",
+      "sha256": "sha256:794d5415d1627a84673ebbdb0278de49114546ef67d233c65e88a74de1575761",
+      "size": 3829,
+      "assetType": "image",
+      "groupId": "mundo-voxel",
+      "used": true
+    },
+    "assets/ui/loading_initial.png": {
+      "path": "/manus-storage/game/sha256/84009f472c5222482dfda1652c0cfa99cdd1e77f4c3ca7118f258acf4ec030ce.png",
+      "sha256": "sha256:84009f472c5222482dfda1652c0cfa99cdd1e77f4c3ca7118f258acf4ec030ce",
+      "size": 352771,
+      "assetType": "image",
+      "groupId": "ui",
+      "used": true
+    },
+    "assets/ui/menu_background.png": {
+      "path": "/manus-storage/game/sha256/cc905027b3d285609885dc564c3c7eb00d576024025c701eb1d894738da546ef.png",
+      "sha256": "sha256:cc905027b3d285609885dc564c3c7eb00d576024025c701eb1d894738da546ef",
+      "size": 1971864,
+      "assetType": "image",
+      "groupId": "ui",
+      "used": true
+    }
+  }
+}
