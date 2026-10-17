@@ -445,7 +445,10 @@ func _build_chunk(coord: Vector2i) -> void:
 					trunk_cells.append(Vector3i(local_x, y, local_z))
 				for face_index: int in FACE_DIRS.size():
 					var dir: Vector3i = FACE_DIRS[face_index]
-					if snapshot[_snapshot_index(local_x + dir.x, y + dir.y, local_z + dir.z)] == 0:
+					# Folhas têm textura recortada (alpha): o que está atrás delas precisa
+					# ter a face desenhada, senão o terreno sob a copa fica "furado".
+					var neighbor_id := int(snapshot[_snapshot_index(local_x + dir.x, y + dir.y, local_z + dir.z)])
+					if _face_is_exposed(block_id, neighbor_id):
 						_add_face(surface, Vector3(float(local_x), float(y), float(local_z)), block_id, face_index, block_pos)
 						face_count += 1
 	if face_count == 0:
@@ -490,6 +493,12 @@ func _build_chunk(coord: Vector2i) -> void:
 	add_child(body)
 	_chunks[coord] = body
 	chunk_ready.emit(coord)
+
+
+## Uma face é visível se o vizinho é ar, ou se é folha (transparente) e o bloco
+## atual não é folha. Folha contra folha continua omitida (face interna da copa).
+static func _face_is_exposed(block_id: int, neighbor_id: int) -> bool:
+	return neighbor_id == 0 or (neighbor_id == 5 and block_id != 5)
 
 
 func _discard_chunk(coord: Vector2i) -> void:

@@ -183,7 +183,7 @@ func _count_expected_faces(world: ByteCrafterWorld, coord: Vector2i) -> int:
 				if world.get_block_at(pos) == 0:
 					continue
 				for dir: Vector3i in ByteCrafterWorld.FACE_DIRS:
-					if world.get_block_at(pos + dir) == 0:
+					if ByteCrafterWorld._face_is_exposed(world.get_block_at(pos), world.get_block_at(pos + dir)):
 						faces += 1
 	return faces
 
@@ -239,6 +239,8 @@ func _test_voxel_integrity() -> void:
 		if child is StaticBody3D:
 			chunk_children += 1
 	_check(chunk_children == chunks.size(), "the world must keep exactly one body per loaded chunk (no stale colliders)")
+	_check(ByteCrafterWorld._face_is_exposed(2, 5) and ByteCrafterWorld._face_is_exposed(4, 5) and ByteCrafterWorld._face_is_exposed(3, 0), "faces behind transparent leaves must be drawn")
+	_check(not ByteCrafterWorld._face_is_exposed(5, 5) and not ByteCrafterWorld._face_is_exposed(2, 3), "leaf-to-leaf and solid-to-solid faces must stay culled")
 	# Copas nunca substituem terreno sólido.
 	var tree_blocks: Dictionary = world.get("_tree_blocks")
 	var leaves_over_terrain := 0
