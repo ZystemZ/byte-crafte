@@ -223,7 +223,8 @@ func _populate_tree_cache(chunk_coord: Vector2i) -> void:
 						for dz: int in range(-radius, radius + 1):
 							if absi(dx) + absi(dz) <= radius + 1:
 								var leaf_pos := Vector3i(x + dx, y, z + dz)
-								if not _tree_blocks.has(leaf_pos):
+								# Copas em encostas não podem substituir terreno sólido.
+								if not _tree_blocks.has(leaf_pos) and _base_block(leaf_pos) == 0:
 									_tree_blocks[leaf_pos] = 5
 
 
@@ -395,37 +396,70 @@ func _rebuild_chunk_and_neighbours(coords: Vector3i) -> void:
 			_build_chunk(coord)
 
 
-func _build_chunk(coord: Vector2i) -> void:
-	if _chunks.has(coord):
-		var previous: Node = _chunks[coord]
-		_chunks.erase(coord)
-		previous.queue_free()
+const _PAD_X := CHUNK_SIZE + 2
+const _PAD_Z := CHUNK_SIZE + 2
+const _PAD_Y := WORLD_HEIGHT + 3
+
+
+static func _snapshot_index(local_x: int, y: int, local_z: int) -> int:
+	return ((local_x + 1) * _PAD_Z + (local_z + 1)) * _PAD_Y + (y + 1)
+
+
+## Amostra uma única vez todos os blocos do chunk com 1 bloco de margem em cada
+## direção. A malha, as colisões e as faces de borda saem do mesmo snapshot, que
+## por sua vez vem de get_block_at() (única fonte de verdade: overrides + árvores
+## + estruturas + terreno procedural).
+func _sample_chunk_snapshot(coord: Vector2i) -> PackedByteArray:
 	var origin_x := coord.x * CHUNK_SIZE
 	var origin_z := coord.y * CHUNK_SIZE
+	var snapshot := PackedByteArray()
+	snapshot.resize(_PAD_X * _PAD_Z * _PAD_Y)
+	for local_x: int in range(-1, CHUNK_SIZE + 1):
+		for local_z: int in range(-1, CHUNK_SIZE + 1):
+			var x := origin_x + local_x
+			var z := origin_z + local_z
+			# y=-1 e y=WORLD_HEIGHT+1 ficam como ar (get_block_at já retorna 0).
+			for y: int in range(0, WORLD_HEIGHT + 1):
+				snapshot[_snapshot_index(local_x, y, local_z)] = get_block_at(Vector3i(x, y, z))
+	return snapshot
+
+
+func _build_chunk(coord: Vector2i) -> void:
+	var origin_x := coord.x * CHUNK_SIZE
+	var origin_z := coord.y * CHUNK_SIZE
+	var snapshot := _sample_chunk_snapshot(coord)
 	var surface := SurfaceTool.new()
 	surface.begin(Mesh.PRIMITIVE_TRIANGLES)
 	var face_count := 0
+	var trunk_cells: Array[Vector3i] = []
 	for local_x: int in CHUNK_SIZE:
 		for local_z: int in CHUNK_SIZE:
-			var x := origin_x + local_x
-			var z := origin_z + local_z
-			# Tree crowns may extend above the local terrain height when rooted on
-			# a taller neighboring column. Scan the complete playable height so
-			# those voxels are not silently omitted from the mesh or its collision.
+			# Copas podem ultrapassar a altura local do terreno quando a raiz está em
+			# uma coluna vizinha mais alta; varremos toda a altura jogável.
 			for y: int in range(0, WORLD_HEIGHT + 1):
-				var block_id := get_block_at(Vector3i(x, y, z))
+				var block_id := int(snapshot[_snapshot_index(local_x, y, local_z)])
 				if block_id == 0:
 					continue
-				var block_pos := Vector3i(x, y, z)
+				var block_pos := Vector3i(origin_x + local_x, y, origin_z + local_z)
+				if block_id == 4:
+					trunk_cells.append(Vector3i(local_x, y, local_z))
 				for face_index: int in FACE_DIRS.size():
-					if get_block_at(block_pos + FACE_DIRS[face_index]) == 0:
+					var dir: Vector3i = FACE_DIRS[face_index]
+					if snapshot[_snapshot_index(local_x + dir.x, y + dir.y, local_z + dir.z)] == 0:
 						_add_face(surface, Vector3(float(local_x), float(y), float(local_z)), block_id, face_index, block_pos)
 						face_count += 1
 	if face_count == 0:
+		_discard_chunk(coord)
 		return
 	var mesh := surface.commit() as ArrayMesh
 	if mesh == null:
 		return
+	var collision_mesh := mesh.create_trimesh_shape() as ConcavePolygonShape3D
+	if collision_mesh == null or collision_mesh.get_faces().is_empty():
+		# Mantém o corpo anterior (se houver) em vez de abrir um buraco no mundo.
+		push_error("ByteCrafter: não foi possível gerar a colisão do chunk %s." % [coord])
+		return
+	collision_mesh.backface_collision = true
 	var body := StaticBody3D.new()
 	body.name = "Chunk_%d_%d" % [coord.x, coord.y]
 	body.position = Vector3(float(origin_x), 0.0, float(origin_z))
@@ -437,33 +471,38 @@ func _build_chunk(coord: Vector2i) -> void:
 	body.add_child(mesh_instance)
 	var collider := CollisionShape3D.new()
 	collider.name = "ChunkCollision"
-	var collision_mesh := mesh.create_trimesh_shape() as ConcavePolygonShape3D
-	if collision_mesh == null or collision_mesh.get_faces().is_empty():
-		push_error("ByteCrafter: não foi possível gerar a colisão do chunk %s." % [coord])
-		body.free()
-		return
-	collision_mesh.backface_collision = true
 	collider.shape = collision_mesh
 	body.add_child(collider)
-	# Keep tree trunks solid even if a future visual-mesh optimization changes
-	# which faces are emitted. These few box colliders are cheap and unambiguous.
-	for local_x: int in CHUNK_SIZE:
-		for local_z: int in CHUNK_SIZE:
-			var x := origin_x + local_x
-			var z := origin_z + local_z
-			for y: int in range(0, WORLD_HEIGHT + 1):
-				if get_block_at(Vector3i(x, y, z)) != 4:
-					continue
-				var trunk_shape := BoxShape3D.new()
-				trunk_shape.size = Vector3.ONE * 0.98
-				var trunk_collider := CollisionShape3D.new()
-				trunk_collider.name = "TreeTrunkCollision"
-				trunk_collider.shape = trunk_shape
-				trunk_collider.position = Vector3(float(local_x) + 0.5, float(y) + 0.5, float(local_z) + 0.5)
-				body.add_child(trunk_collider)
+	# Troncos continuam com caixas próprias: baratas e inequívocas.
+	for cell: Vector3i in trunk_cells:
+		var trunk_shape := BoxShape3D.new()
+		trunk_shape.size = Vector3.ONE * 0.98
+		var trunk_collider := CollisionShape3D.new()
+		trunk_collider.name = "TreeTrunkCollision"
+		trunk_collider.shape = trunk_shape
+		trunk_collider.position = Vector3(float(cell.x) + 0.5, float(cell.y) + 0.5, float(cell.z) + 0.5)
+		body.add_child(trunk_collider)
+	# Troca sem lacuna: o corpo novo já está pronto antes de o antigo sair da
+	# árvore física, e o antigo é removido imediatamente (sem colisão duplicada).
+	var previous: Node = _chunks.get(coord)
+	if previous != null:
+		_detach_chunk_body(previous)
 	add_child(body)
 	_chunks[coord] = body
 	chunk_ready.emit(coord)
+
+
+func _discard_chunk(coord: Vector2i) -> void:
+	var previous: Node = _chunks.get(coord)
+	if previous != null:
+		_chunks.erase(coord)
+		_detach_chunk_body(previous)
+
+
+func _detach_chunk_body(body: Node) -> void:
+	if body.get_parent() == self:
+		remove_child(body)
+	body.queue_free()
 
 
 func _add_face(surface: SurfaceTool, origin: Vector3, block_id: int, face_index: int, block_pos: Vector3i) -> void:

@@ -193,14 +193,14 @@ func _input(event: InputEvent) -> void:
 				_player.set_third_person(not _player.third_person)
 				_set_game_status("Câmera: %s" % ("3ª pessoa" if _player.third_person else "1ª pessoa"))
 			elif event.keycode == KEY_F:
-				_try_attack_enemy()
+				_interact_contextual()
 			elif event.keycode == KEY_E:
 				_toggle_crafting()
 			elif event.keycode == KEY_T:
 				_place_crafting_table()
 			elif event.keycode == KEY_P:
 				_use_farming_action()
-			elif event.keycode >= KEY_1 and event.keycode <= KEY_7:
+			elif event.keycode >= KEY_1 and event.keycode <= KEY_9:
 				_select_slot(int(event.keycode - KEY_1))
 			elif event.keycode == KEY_F5:
 				_save_game()
@@ -1578,6 +1578,21 @@ func _request_block_change(coords: Vector3i, new_block_id: int, spent_block_id: 
 			rpc("sync_world_block", coords, new_block_id, reward_item_id, spent_block_id, multiplayer.get_unique_id(), drop_id, xp_reward)
 	else:
 		rpc_id(1, "request_world_block", coords, new_block_id, spent_block_id)
+
+
+## F: ação contextual. Ataca o alvo à frente; sem alvo, interage com uma mesa
+## de craft próxima (abre o crafting); caso contrário, informa o jogador.
+func _interact_contextual() -> void:
+	if _craft_panel != null and _craft_panel.visible:
+		return
+	if _try_attack_enemy():
+		return
+	if _player != null:
+		for table: Node3D in _crafting_tables:
+			if is_instance_valid(table) and table.global_position.distance_to(_player.global_position) <= 3.2:
+				_toggle_crafting()
+				return
+	_set_game_status("Nada para interagir aqui.")
 
 
 func _try_attack_enemy() -> bool:

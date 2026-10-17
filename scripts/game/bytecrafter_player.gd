@@ -4,6 +4,9 @@ class_name ByteCrafterPlayer
 const WALK_SPEED := 5.6
 const SPRINT_SPEED := 8.2
 const JUMP_VELOCITY := 7.0
+const GROUND_ACCEL := 46.0
+const GROUND_DECEL := 58.0
+const AIR_ACCEL := 18.0
 const LOOK_SENSITIVITY := 0.0024
 const AVATAR_SCRIPT := preload("res://scripts/game/bytecrafter_avatar.gd")
 const AVATAR_IDS := ["boy", "girl", "boy2", "girl2"]
@@ -176,8 +179,12 @@ func _physics_process(delta: float) -> void:
 	var direction := (global_transform.basis * movement).normalized()
 	var sprinting := Input.is_key_pressed(KEY_SHIFT)
 	var speed := SPRINT_SPEED if sprinting else WALK_SPEED
-	velocity.x = direction.x * speed
-	velocity.z = direction.z * speed
+	# Aceleração/desaceleração suaves; no ar o controle é reduzido, mas existe.
+	var target_velocity := direction * speed
+	var has_input := movement.length_squared() > 0.0001
+	var rate := (GROUND_ACCEL if has_input else GROUND_DECEL) if is_on_floor() else AIR_ACCEL
+	velocity.x = move_toward(velocity.x, target_velocity.x, rate * delta)
+	velocity.z = move_toward(velocity.z, target_velocity.z, rate * delta)
 	if not is_on_floor():
 		velocity.y -= 20.0 * delta
 	elif Input.is_key_pressed(KEY_SPACE):

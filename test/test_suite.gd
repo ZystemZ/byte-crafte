@@ -20,6 +20,7 @@ func _run() -> void:
 	_test_localization()
 	_test_recipe_book()
 	_test_seeded_world()
+	_test_voxel_integrity()
 	await _test_playable_loop()
 	Input.action_release("move_up")
 	Input.action_release("move_down")
@@ -172,6 +173,92 @@ func _test_seeded_world() -> void:
 	world_b.free()
 
 
+## Integridade voxel (P0): malha, colisão e dados de bloco precisam concordar.
+func _count_expected_faces(world: ByteCrafterWorld, coord: Vector2i) -> int:
+	var faces := 0
+	for local_x: int in ByteCrafterWorld.CHUNK_SIZE:
+		for local_z: int in ByteCrafterWorld.CHUNK_SIZE:
+			for y: int in range(0, ByteCrafterWorld.WORLD_HEIGHT + 1):
+				var pos := Vector3i(coord.x * ByteCrafterWorld.CHUNK_SIZE + local_x, y, coord.y * ByteCrafterWorld.CHUNK_SIZE + local_z)
+				if world.get_block_at(pos) == 0:
+					continue
+				for dir: Vector3i in ByteCrafterWorld.FACE_DIRS:
+					if world.get_block_at(pos + dir) == 0:
+						faces += 1
+	return faces
+
+
+func _count_blocks(world: ByteCrafterWorld, coord: Vector2i, block_id: int) -> int:
+	var count := 0
+	for local_x: int in ByteCrafterWorld.CHUNK_SIZE:
+		for local_z: int in ByteCrafterWorld.CHUNK_SIZE:
+			for y: int in range(0, ByteCrafterWorld.WORLD_HEIGHT + 1):
+				if world.get_block_at(Vector3i(coord.x * ByteCrafterWorld.CHUNK_SIZE + local_x, y, coord.y * ByteCrafterWorld.CHUNK_SIZE + local_z)) == block_id:
+					count += 1
+	return count
+
+
+func _chunk_mesh_vertex_count(body: StaticBody3D) -> int:
+	for child: Node in body.get_children():
+		var instance := child as MeshInstance3D
+		if instance != null and instance.mesh != null and instance.mesh.get_surface_count() > 0:
+			return (instance.mesh.surface_get_arrays(0)[Mesh.ARRAY_VERTEX] as PackedVector3Array).size()
+	return -1
+
+
+func _test_voxel_integrity() -> void:
+	var world := WORLD_SCRIPT.new() as ByteCrafterWorld
+	world.configure(120303788, [], 1)
+	var chunks: Dictionary = world.get("_chunks")
+	for coord: Vector2i in [Vector2i(0, 0), Vector2i(-1, 0), Vector2i(0, -1), Vector2i(-1, -1), Vector2i(1, 0)]:
+		world.call("_build_chunk", coord)
+		var body := chunks.get(coord) as StaticBody3D
+		_check(body != null, "chunk %s must be built" % [coord])
+		if body == null:
+			continue
+		var expected_faces := _count_expected_faces(world, coord)
+		var vertex_count := _chunk_mesh_vertex_count(body)
+		_check(vertex_count == expected_faces * 6, "chunk %s mesh must contain exactly the faces implied by block data (%d vs %d)" % [coord, vertex_count / 6, expected_faces])
+		var collision := body.get_node_or_null("ChunkCollision") as CollisionShape3D
+		var shape := collision.shape as ConcavePolygonShape3D if collision != null else null
+		_check(shape != null and shape.get_faces().size() == vertex_count, "chunk %s collision triangles must match the visible mesh" % [coord])
+		var trunk_colliders := 0
+		for child: Node in body.get_children():
+			if child.name.begins_with("TreeTrunkCollision"):
+				trunk_colliders += 1
+		_check(trunk_colliders == _count_blocks(world, coord, 4), "chunk %s must have one trunk collider per trunk block" % [coord])
+	# Reconstruir um chunk não pode deixar corpos obsoletos nem lacunas.
+	var rebuilt_coord := Vector2i(0, 0)
+	var before := chunks.get(rebuilt_coord) as StaticBody3D
+	world.call("_build_chunk", rebuilt_coord)
+	var after := chunks.get(rebuilt_coord) as StaticBody3D
+	_check(after != null and after != before, "rebuilding must install a fresh chunk body")
+	_check(before != null and before.get_parent() == null, "the replaced chunk body must leave the physics tree immediately")
+	var chunk_children := 0
+	for child: Node in world.get_children():
+		if child is StaticBody3D:
+			chunk_children += 1
+	_check(chunk_children == chunks.size(), "the world must keep exactly one body per loaded chunk (no stale colliders)")
+	# Copas nunca substituem terreno sólido.
+	var tree_blocks: Dictionary = world.get("_tree_blocks")
+	var leaves_over_terrain := 0
+	for key: Variant in tree_blocks.keys():
+		var cell: Vector3i = key
+		if int(tree_blocks[cell]) == 5 and int(world.call("_base_block", cell)) != 0:
+			leaves_over_terrain += 1
+	_check(leaves_over_terrain == 0, "tree crowns must not overwrite solid terrain")
+	# Borda de chunk: remover o bloco e recolocar mantém as duas faces coerentes.
+	var edge := Vector3i(15, world.terrain_height(15, 4), 4)
+	var original := world.get_block_at(edge)
+	_check(world.set_block_at(edge, 0), "an edge voxel must be removable")
+	_check(world.set_block_at(edge, original), "an edge voxel must be restorable")
+	for coord: Vector2i in [Vector2i(0, 0), Vector2i(1, 0)]:
+		var edge_body := chunks.get(coord) as StaticBody3D
+		if edge_body != null:
+			_check(_chunk_mesh_vertex_count(edge_body) == _count_expected_faces(world, coord) * 6, "chunk %s must stay consistent after an edge edit" % [coord])
+	world.free()
+
+
 func _test_playable_loop() -> void:
 	var game := GAME_SCENE.instantiate()
 	get_tree().root.add_child(game)
@@ -196,6 +283,19 @@ func _test_playable_loop() -> void:
 	_check(bool(game.call("_placement_overlaps_player", player_cell)), "placement validation must detect overlap with the player collider")
 	_check(str(game.get("_screen")) == "game", "starting a new world must enter gameplay")
 	_check(player != null and player.can_control, "the player must become controllable in a new world")
+	# Hotbar de nove slots: as teclas 1–9 precisam alcançar todos os slots.
+	for key_offset: int in 9:
+		var hotbar_key := InputEventKey.new()
+		hotbar_key.keycode = KEY_1 + key_offset
+		hotbar_key.pressed = true
+		game.call("_input", hotbar_key)
+		_check(int(game.get("_selected_slot")) == key_offset, "hotbar key %d must select slot %d" % [key_offset + 1, key_offset])
+	var interact_key := InputEventKey.new()
+	interact_key.keycode = KEY_F
+	interact_key.pressed = true
+	game.call("_input", interact_key)
+	_check(not (game.get("_craft_panel") as Control).visible, "F without a target or nearby table must not open the crafting panel")
+	game.call("_select_slot", 0)
 	_check(world != null and world.get_chunk_count() > 0, "the open world must stream terrain chunks")
 	var voxel_material := world.get("_voxel_material") as StandardMaterial3D if world != null else null
 	_check(voxel_material != null and voxel_material.cull_mode == BaseMaterial3D.CULL_DISABLED, "voxel chunks must render both sides of faces so top surfaces cannot vanish")
